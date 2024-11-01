@@ -1,57 +1,20 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main()
-{
-   long long int a  ,b;
 
-cin>>a;//
-cin>>b;
+int main() {
+    long long a, b;
+    cin >> a >> b;
 
-int c=0;
-int m = 0;
-int sum=1;
-if(a%2==0)
-{
-   sum=a/2;
-   m=sum;
-}
-else
-{
+    // Calculate the count of odd numbers up to a
+    long long oddCount = (a + 1) / 2;
 
-sum = (a/2)+1;
-m = sum;
-}
-
-for(int i =1 ; i<=a;i++)
-{
-    if(i%2!=0)
-    {
-    c++;
-
-   // p[i-1]=i;
-    if(b==c)
-    {
-        cout<<i;
+    if (b <= oddCount) {
+        // If b is within the range of odd numbers
+        cout << (2 * b - 1);
+    } else {
+        // If b is within the range of even numbers
+        cout << (2 * (b - oddCount));
     }
-    }
-if(i%2==0)
-{
-    m=m+1;
-  //  p[i-1]=i;
-    if(b==m)
-    {
-        cout<<i;
-    }
-}
-}
 
-//cout<<sum;
-//for(int i =0 ; i<a;i++)
-
-//{
-  //  if(b<c)
-  //{
-  //  cout<<p[b];
- // }
-//}
+    return 0;
 }
